@@ -1,0 +1,18 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    .active{
+        @apply text-primary
+    }
+}
+body {
+    @apply text-black bg-white;
+  }
+  
+  /* Chế độ tối */
+  .dark body {
+    @apply text-white bg-gray-900;
+  }
