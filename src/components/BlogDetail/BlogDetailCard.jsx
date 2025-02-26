@@ -5,6 +5,7 @@ import { CiClock2 } from "react-icons/ci";
 import { IoLocationOutline } from 'react-icons/io5';
 import { FaHiking } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import BlogContent from './BlogContent';
 
 const BlogDetailCard = ({ item }) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -95,6 +96,7 @@ const BlogDetailCard = ({ item }) => {
                     </div>
                 </div>
             </div>
+            <BlogContent/>
         </div>
     );
 };
