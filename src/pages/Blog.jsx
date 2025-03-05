@@ -1,9 +1,9 @@
 import React from 'react';
-import BlogsComp from '../components/Blogs/BlogsComp';
+import Places from '../components/Places/Places';
 const Blog = () => {
     return (
         <div className='min-h-[500px] pt-24 bg-gray-100'>
-          <BlogsComp/>
+          <Places/>
         </div>
     );
 };

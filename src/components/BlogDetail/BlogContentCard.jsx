@@ -19,7 +19,7 @@ const BlogContentCard = ({ item }) => {
                                 <p><strong>Hoạt động:</strong> {s.activity}</p>
                             </div>
                             {s.img && (
-                                <img data-aos="fade-in" src={s.img} alt="Hình minh họa" className="object-cover w-full h-[500px] mt-5 rounded-lg" />
+                                <img data-aos="fade-in" data-aos-duration="800" src={s.img} alt="Hình minh họa" className="object-cover w-full h-[500px] mt-5 rounded-lg" />
                             )}
                         </div>
                     ))}
@@ -70,7 +70,6 @@ const BlogContentCard = ({ item }) => {
                     </div>
                     <p className='text-xs'>Bấm vào để hổ trợ tư vấn</p>
                 </div>
-
             </div>
         </div>
     );

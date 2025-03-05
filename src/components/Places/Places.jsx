@@ -22,7 +22,7 @@ const Places = () => {
         <div className='py-10 bg-gray-50'>
             <section data-aos="fade-up" className='container'>
                 <h1 className='py-2 pl-3 my-8 text-3xl font-bold text-left border-l-8 border-primary/50'>
-                    Những địa điểm nổi tiếng
+                    Khám Phá Kho Báu Việt Nam Cùng Mixivivu
                 </h1>
                 <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3'>
                     {placesData.map((item) => (

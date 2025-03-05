@@ -1,9 +1,18 @@
 import React from 'react';
+import AboutHeader from '../components/About/AboutHeader';
+import AboutUs from '../components/About/AboutUs';
+import AboutBannerImg from '../components/About/AboutBannerImg';
+import AboutTravel from '../components/About/AboutTravel';
+import AboutTeam from '../components/About/AboutTeam';
 
 const About = () => {
     return (
         <div>
-            <h1>abouy</h1>
+            <AboutHeader />
+            <AboutUs />
+            <AboutBannerImg />
+            <AboutTravel />
+            <AboutTeam />
         </div>
     );
 };

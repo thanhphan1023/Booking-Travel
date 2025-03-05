@@ -9,11 +9,13 @@ import Home from './pages/Home'
 import Blog from './pages/Blog'
 import NoPage from './pages/NoPage'
 import BlogsDetail from './pages/BlogsDetail'
-import PlaceRoute from './pages/PlaceRoute'
 import Login from './pages/auth/Login/Login';
 import Signup from './pages/auth/signup/Signup';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Hotel from './pages/Hotel';
+import Contact from './pages/Contact';
+import Place from './pages/Place';
 
 function App() {
   React.useEffect(() => {
@@ -21,7 +23,7 @@ function App() {
       offset: 100,
       duration: 1000,
       easing: "ease-in-out",
-      delay: 100,
+      delay: 300,
     });
     AOS.refresh();
   }, []);
@@ -34,7 +36,9 @@ function App() {
             <Route path='/about' element={<About />}></Route>
             <Route path='/blogs' element={<Blog />}></Route>
             <Route path='/blog/:id' element={<BlogsDetail />}></Route>
-            <Route path='/places' element={<PlaceRoute />}></Route>
+            <Route path='/places' element={<Place />}></Route>
+            <Route path='/contact' element={<Contact />}></Route>
+            <Route path='/hotel' element={<Hotel />}></Route>
             <Route path='*' element={<NoPage />}></Route>
           </Route>
           <Route path='/login' element={<Login />}></Route>

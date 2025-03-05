@@ -1,12 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import LogoImg from "../../assets/Travel/Logo.png";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaCaretDown, FaPhoneAlt } from "react-icons/fa";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
 import ResponsiveMenu, { } from "../Navbar/ResponsiveMenu";
 import "flowbite";
 
+const DropdownLinks = [
+    {
+        name: "Tour",
+        link: "/#tour",
+    },
+    {
+        name: "Hướng Dẫn Viên",
+        link: "/#HDV",
+    },
+
+];
 const Navbar = () => {
     const [darkMode, setDarkMode] = useState(
         localStorage.getItem("theme") === "dark"
@@ -55,16 +66,39 @@ const Navbar = () => {
                                         to="/"
                                         onClick={() => window.scrollTo(0, 0)}
                                     >
-                                        Tour du lịch
+                                        Trang Chủ
                                     </NavLink>
+                                </li>
+                                {/* Dropdown section */}
+                                <li className="relative py-4 group">
+                                    <div className="flex items-center cursor-pointer dropdown">
+                                        <span>Tour</span>
+                                        <span>
+                                            <FaCaretDown className="transition-all duration-200 group-hover:rotate-180:" />
+                                        </span>
+                                        <div className="absolute -left-9 z-[9999] hidden w-[200px] top-[57px] rounded-md bg-white p-2 text-black group-hover:block shadow-md ">
+                                            <ul className="space-y-3">
+                                                {DropdownLinks.map((data) => (
+                                                    <li key={data.name}>
+                                                        <a
+                                                            className="inline-block w-full p-2 rounded-md hover:bg-primary/20"
+                                                            href={data.link}
+                                                        >
+                                                            {data.name}
+                                                        </a>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </li>
                                 <li className="py-4 text-lg font-normal">
                                     <NavLink
                                         className={({ isActive }) => (isActive ? "active" : "")}
-                                        to="/blogs"
+                                        to="/about"
                                         onClick={() => window.scrollTo(0, 0)}
                                     >
-                                        Blogs
+                                        Giới Thiệu
                                     </NavLink>
                                 </li>
                                 <li className="py-4 text-lg font-normal">
@@ -73,16 +107,16 @@ const Navbar = () => {
                                         to="/places"
                                         onClick={() => window.scrollTo(0, 0)}
                                     >
-                                        Khách sạn
+                                        Điểm Đến
                                     </NavLink>
                                 </li>
                                 <li className="py-4 text-lg font-normal">
                                     <NavLink
                                         className={({ isActive }) => (isActive ? "active" : "")}
-                                        to="/about"
+                                        to="/contact"
                                         onClick={() => window.scrollTo(0, 0)}
                                     >
-                                        Doanh Nghiệp
+                                        Liên Hệ
                                     </NavLink>
                                 </li>
                             </ul>
@@ -96,20 +130,17 @@ const Navbar = () => {
                                 {darkMode ? <FiSun className="w-5 h-5 text-yellow-500" /> : <FiMoon className="w-5 h-5" />}
                             </button>
                             {/* ĐN && ĐK */}
+
                             <Link
                                 to='/login'
                                 type="button"
                                 className="px-5 py-2 text-white transition-all rounded-full duration-600 bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-r hover:from-secondary hover:bg-primary"
                             >
-                                Đăng Nhập
+                                Book Now
                             </Link>
-                            <Link
-                                to='/signup'
-                                type="button"
-                                className="px-5 py-2 text-white transition-all rounded-full duration-600 bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-r hover:from-secondary hover:bg-primary"
-                            >
-                                Đăng Kí
-                            </Link>
+
+
+
                         </div>
                         <div className="block md:hidden">
                             {showMenu ? (
