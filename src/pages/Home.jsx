@@ -3,10 +3,10 @@ import MainVD from '../assets/Video/main.mp4';
 import Hero from '../components/Hero/Hero';
 import Places from '../components/Places/Places';
 import Banner1 from '../assets/Travel/Banner.png'
-import Blog from './Blog';
 import BannerImg from '../components/BannerImg/BannerImg';
 import Banner from '../components/Banner/Banner';
 import Evaluate from '../components/Evaluate/Evaluate';
+import Popular from './Popular';
 const Home = () => {
     return (
         < >
@@ -23,7 +23,7 @@ const Home = () => {
             </div>
             <Places />
             <BannerImg img={Banner1} />
-            <Blog />
+            <Popular />
             <Banner />
             <Evaluate />
         </>

@@ -28,12 +28,12 @@ const BlogDetailCard = ({ item }) => {
     };
 
     return (
-        <div>
-            <div className='container grid gap-10 pt-10 md:grid-cols-2'>
+        <div >
+            <div className='container gap-10 '>
                 <div className=''>
                     <div className="relative mx-auto">
                         <img
-                            className='rounded-[32px] h-[300px] w-[560px] object-cover transition duration-700'
+                            className=' h-[500px] w-full object-cover transition duration-700'
                             src={selectedImg} alt="" />
                         <button
                             onClick={handlePrev}
@@ -50,7 +50,7 @@ const BlogDetailCard = ({ item }) => {
                         {item.img.map((img, index) => (
                             <img
                                 key={index}
-                                className={`w-[105px] object-cover cursor-pointer border 
+                                className={`w-[220px] object-cover cursor-pointer border 
                                     ${index === selectedIndex ? 'border-red-500' : ''}`}
                                 src={img} alt=""
                                 onClick={() => {
@@ -61,40 +61,7 @@ const BlogDetailCard = ({ item }) => {
                         ))}
                     </div>
                 </div>
-                <div className='p-5 bg-gray-100 rounded-xl'>
-                    <div className='space-y-4' >
-                        <h1 className='text-xl font-bold '>{item.title[0]}</h1>
-                        <div className='flex items-center gap-2'>
-                            <AiFillThunderbolt className='w-5 h-5 text-yellow-400' />
-                            <p className='text-lg'><span className='font-bold'>Giá tour từ:</span> {item.price} VND</p>
-                        </div>
-                        <div className='flex items-center gap-2'>
-                            <AiFillThunderbolt className='w-5 h-5 text-yellow-400' />
-                            <p className='text-lg'><span className='font-bold'>Giá trẻ em:</span> 0 VND</p>
-                        </div>
-                        <div className='flex items-center gap-2'>
-                            <CiClock2 className='w-5 h-5 ' />
-                            <p className='text-lg'><span className='font-bold'>Thời gian: </span>{item.date} ngày</p>
-                        </div>
-                        <div className='flex items-center gap-3'>
-                            <IoLocationOutline className='w-6 h-6' />
-                            <p className='text-lg'><span className='font-bold'>Điểm khởi hành: </span>{item.location}</p>
-                        </div>
-                        <div className='flex items-center gap-3'>
-                            <FaHiking className='w-6 h-6' />
-                            <p className='text-lg'><span className='font-bold'>Mô tả: </span>{item.description}</p>
-                        </div>
-                        <input
-                            className='w-full p-2 border border-gray-600 rounded-full'
-                            type="text" name="" id=""
-                            placeholder='Vui lòng nhập số điện thoại để được tư vấn' />
-                        <button
-                            className="w-full py-2 mb-5 font-bold text-white transition-all rounded-full duration-600 bg-gradient-to-r from-primary to-secondary hover:text-white hover:bg-gray-400"
-                        >
-                            Send
-                        </button>
-                    </div>
-                </div>
+                
             </div>
             <BlogContent/>
         </div>

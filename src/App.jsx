@@ -6,16 +6,18 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './pages/Layout'
 import About from './pages/About'
 import Home from './pages/Home'
-import Blog from './pages/Blog'
 import NoPage from './pages/NoPage'
+import Popular from './pages/Popular';
 import BlogsDetail from './pages/BlogsDetail'
 import Login from './pages/auth/Login/Login';
 import Signup from './pages/auth/signup/Signup';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Hotel from './pages/Hotel';
 import Contact from './pages/Contact';
 import Place from './pages/Place';
+import Tours from './pages/Tours';
+import TourGuide from './pages/TourGuide';
+import Profile from './pages/Profile';
 
 function App() {
   React.useEffect(() => {
@@ -34,11 +36,13 @@ function App() {
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />}></Route>
             <Route path='/about' element={<About />}></Route>
-            <Route path='/blogs' element={<Blog />}></Route>
+            <Route path='/popular' element={<Popular />}></Route>
             <Route path='/blog/:id' element={<BlogsDetail />}></Route>
             <Route path='/places' element={<Place />}></Route>
             <Route path='/contact' element={<Contact />}></Route>
-            <Route path='/hotel' element={<Hotel />}></Route>
+            <Route path='/tour' element={<Tours />}></Route>
+            <Route path='/tourguide' element={<TourGuide />}></Route>
+            <Route path='/profile' element={<Profile />}></Route>
             <Route path='*' element={<NoPage />}></Route>
           </Route>
           <Route path='/login' element={<Login />}></Route>

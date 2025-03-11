@@ -6,18 +6,34 @@ import { FiSun, FiMoon } from "react-icons/fi";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
 import ResponsiveMenu, { } from "../Navbar/ResponsiveMenu";
 import "flowbite";
+import { FaUserAlt } from "react-icons/fa";
+
 
 const DropdownLinks = [
     {
         name: "Tour",
-        link: "/#tour",
+        link: "/tour",
     },
     {
         name: "Hướng Dẫn Viên",
-        link: "/#HDV",
+        link: "/tourguide",
     },
 
 ];
+const UserLinks = [
+    {
+        name: "Thông tin cá nhân",
+        link: "/profile"
+    },
+    {
+        name: "Tour đã đặt",
+        link: "/booking"
+    },
+    {
+        name: "Đăng xuất",
+        link: ""
+    }
+]
 const Navbar = () => {
     const [darkMode, setDarkMode] = useState(
         localStorage.getItem("theme") === "dark"
@@ -81,7 +97,7 @@ const Navbar = () => {
                                                 {DropdownLinks.map((data) => (
                                                     <li key={data.name}>
                                                         <a
-                                                            className="inline-block w-full p-2 rounded-md hover:bg-primary/20"
+                                                            className="inline-block w-full p-2 text-lg font-medium rounded-md hover:bg-primary/20"
                                                             href={data.link}
                                                         >
                                                             {data.name}
@@ -121,7 +137,7 @@ const Navbar = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-6">
                             {/* Toggle Dark Mode */}
                             <button
                                 onClick={() => setDarkMode(!darkMode)}
@@ -138,6 +154,28 @@ const Navbar = () => {
                             >
                                 Book Now
                             </Link>
+                            <div className="relative py-4 group">
+                                <div className="flex items-center cursor-pointer dropdown">
+                                    <FaUserAlt className="w-6 h-6"/>
+                                    <span>
+                                        <FaCaretDown className="transition-all duration-200 group-hover:rotate-180:" />
+                                    </span>
+                                    <div className="absolute -left-9 z-[9999] hidden w-[200px] top-[57px] rounded-md bg-white p-2 text-black group-hover:block shadow-md ">
+                                        <ul className="space-y-3">
+                                            {UserLinks.map((data) => (
+                                                <li key={data.name}>
+                                                    <a
+                                                        className="inline-block w-full p-2 text-lg font-medium rounded-md hover:bg-primary/50"
+                                                        href={data.link}
+                                                    >
+                                                        {data.name}
+                                                    </a>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
 
 
 
