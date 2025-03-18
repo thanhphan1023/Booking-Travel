@@ -68,7 +68,7 @@ const Navbar = () => {
                     <div className="flex items-center justify-between">
                         {/* Logo */}
                         <div>
-                            <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+                            <Link to="/" >
                                 <img src={LogoImg} alt="MixiTravel" className="h-16 mt-2 mb-2" />
                             </Link>
                         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import StarRating from '../Star/StarRing';
+import StarDisplay from '../Star/StarDisplay';
 
 const region = ["Miền Bắc", "Miền Trung", "Miền Nam"];
 const prices = ["1.000.000 - 3.000.000", "3.000.000 - 6.000.000", "6.000.000 - 8.000.000", "8.000.000 - 10.000.000"]
@@ -40,7 +40,7 @@ const TourFilter = () => {
                                     {[5, 4, 3, 2, 1].map((rating, index) => (
                                         <div key={index} className="flex items-center gap-3">
                                             <input type="radio" className="w-4 h-4" name="rating" />
-                                            <StarRating rating={rating} />
+                                            <StarDisplay rating={rating} />
                                         </div>
                                     ))}
                                 </div>

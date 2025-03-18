@@ -7,9 +7,9 @@ const ContactHeader = () => {
             <img className='object-cover h-[500px] w-full' src={AboutImg} alt="" />
             <div className='absolute top-[85%] left-[10%]  w-[80%] flex justify-between items-center text-white'>
                 {/* bên trái */}
-                <p className='text-4xl font-bold'>Liên Hệ</p>
+                <p data-aos="fade-right" className='text-4xl font-bold'>Liên Hệ</p>
                 {/*bên phải */}
-                <div className='flex items-center text-sm font-semibold'>
+                <div data-aos="fade-left" className='flex items-center text-lg font-semibold'>
                     <p>Trang chủ</p>
                     <AiOutlineRight />
                     <p className='underline cursor-pointer'>Liên hệ</p>

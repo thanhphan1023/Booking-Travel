@@ -18,6 +18,7 @@ import Place from './pages/Place';
 import Tours from './pages/Tours';
 import TourGuide from './pages/TourGuide';
 import Profile from './pages/Profile';
+import Payment from './pages/Payment';
 
 function App() {
   React.useEffect(() => {
@@ -43,6 +44,7 @@ function App() {
             <Route path='/tour' element={<Tours />}></Route>
             <Route path='/tourguide' element={<TourGuide />}></Route>
             <Route path='/profile' element={<Profile />}></Route>
+            <Route path='/payment' element={<Payment />}></Route>
             <Route path='*' element={<NoPage />}></Route>
           </Route>
           <Route path='/login' element={<Login />}></Route>

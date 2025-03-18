@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdOutlineStarPurple500 } from "react-icons/md";
 
-const StarRating = ({ rating }) => {
+const StarDisplay = ({ rating }) => {
     return (
         <div className="flex text-yellow-500">
             {[...Array(5)].map((_, index) => (
@@ -11,4 +11,4 @@ const StarRating = ({ rating }) => {
     );
 };
 
-export default StarRating;
+export default StarDisplay;

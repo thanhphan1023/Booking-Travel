@@ -9,7 +9,7 @@ const BlogsDetail = () => {
     return (
         <div className='pt-20'>
             <BlogDetail />
-            <Places />
+            <Places title="Những Tour tương tự" />
         </div>
     );
 };

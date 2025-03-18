@@ -2,7 +2,15 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PlacesCard from './PlacesCard';
 
-const Places = ({ hideTitle = true, booking = true, size = "default", left = false, container = true, star = false }) => {
+const Places = ({
+    hideTitle = true,
+    booking = true,
+    size = "default",
+    left = false,
+    container = true,
+    star = false,
+    title = "Khám Phá Kho Báu Việt Nam Cùng Mixivivu"
+}) => {
     const [placesData, setPlaceData] = useState([]);
 
     const getPlaces = async () => {
@@ -23,7 +31,7 @@ const Places = ({ hideTitle = true, booking = true, size = "default", left = fal
             <section data-aos="fade-up " className={container ? 'container' : ''} >
                 {hideTitle && (
                     <h1 className='py-2 pl-3 my-8 text-3xl font-bold text-left border-l-8 border-primary/50'>
-                        Khám Phá Kho Báu Việt Nam Cùng Mixivivu
+                        {title}
                     </h1>
                 )}
                 <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3'>

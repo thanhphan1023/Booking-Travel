@@ -2,76 +2,62 @@ import React from 'react';
 import { FaFacebookMessenger } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import UserTour from '../../assets/Travel/Khachtour.png'
+import { FaCheck } from "react-icons/fa";
+import { IoCloseSharp } from "react-icons/io5";
+import BlogSidebar from './BlogSidebar';
+import BlogSchedule from './BlogSchedule';
+import BlogReview from './BlogReview';
+import BlogFeedback from './BlogFeedback';
+import BlogAddComment from './BlogAddComment';
 const BlogContentCard = ({ item }) => {
     return (
-        <div>
-            <div className='pt-5'>
-                <h1 data-aos="slide-right" className='text-lg font-semibold text-red-500'>{item.title}</h1>
-                <img
-                    data-aos="zoom-in"
-                    className='object-cover w-full h-full mt-5 rounded-lg'
-                    src={item.images[0]} alt="" />
-                <div>
-                    {item.schedule.map((s, index) => (
-                        <div key={index} className='items-center gap-3 mt-2 '>
-                            <div>
-                                <p><strong>Thời gian:</strong> {s.time}</p>
-                                <p><strong>Hoạt động:</strong> {s.activity}</p>
+        <>
+            <div className='flex gap-5'>
+                <div className='w-3/4'>
+                    <h1 className='mt-2 text-xl font-semibold'>Điếm nhấn</h1>
+                    <div className='items-center mt-2 space-y-2 text-lg'>
+                        <p className="text-gray-500"><span className='font-semibold text-black'>Tham quan:</span> {item.highlight.tham_quan}</p>
+                        <p className="text-gray-500"><span className='font-semibold text-black'>Lưu trú:</span> {item.highlight.luu_tru}</p>
+                        <p className="text-gray-500"><span className='font-semibold text-black'>Ăn uống:</span> {item.highlight.am_thuc}</p>
+                        <p className="text-gray-500"><span className='font-semibold text-black'>Hoạt động khác:</span> {item.highlight.hoat_dong_khac}</p>
+                    </div>
+                    <div className='flex gap-6 mt-10'>
+                        {/* bên trái */}
+                        <div className='w-[400px] p-5 h-[400px] border border-gray-200 shadow-md rounded-xl'>
+                            <h1 className="text-xl font-semibold">Bao gồm và không bao gồm</h1>
+                            <div className='gap-2 mt-5 space-y-5 '>
+                                {item.include.map((incl, index) => (
+                                    <div key={index} className='flex items-center gap-3'>
+                                        <FaCheck className='w-4 h-4 text-primary' />
+                                        <p>{incl}</p>
+                                    </div>
+                                ))}
                             </div>
-                            {s.img && (
-                                <img data-aos="fade-in" data-aos-duration="800" src={s.img} alt="Hình minh họa" className="object-cover w-full h-[500px] mt-5 rounded-lg" />
-                            )}
                         </div>
-                    ))}
-                </div>
-                <div className='pt-5'>
-                    <h1 className='text-xl font-semibold'>Những điều lưu ý cho chuyến đi</h1>
-                    <div>
-                        {item.note.map((n, index) => (
-                            <div key={index} className='items-center gap-3 mt-2 '>
-                                <p>- {n}</p>
+                        {/* bên trái */}
+                        <div className='w-[400px] p-5 h-[350px] border border-gray-200 shadow-md rounded-xl'>
+                            <h1 className="text-xl font-semibold">Không bao gồm</h1>
+                            <div className='gap-2 mt-5 space-y-5 '>
+                                {item.notinclude.map((notincl, index) => (
+                                    <div key={index} className='flex items-center gap-3'>
+                                        <IoCloseSharp className='w-4 h-4 text-orange-500' />
+                                        <p>{notincl}</p>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        </div>
                     </div>
                 </div>
-                <div className='pt-5'>
-                    <h1 className='text-xl font-semibold'>Tour bao gồm:</h1>
-                    <div>
-                        {item.include.map((inclu, index) => (
-                            <div key={index} className='items-center gap-3 mt-2 '>
-                                <p>- {inclu}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <div className='pt-5'>
-                    <h1 className='text-xl font-semibold'>Liên hệ đặt tour:</h1>
-                    <div>
-                        {item.contact.map((contact, index) => (
-                            <div key={index} className='items-center gap-3 mt-2 '>
-                                <p>- {contact}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <div className=''>
-                    <img className='object-cover' src={UserTour} alt="Hình ảnh du khách" />
-                </div>
-                <div className="mb-5 text-center ">
-                    <div className='relative flex items-center justify-center px-5 py-2 mx-auto text-white'>
-                        <FaFacebookMessenger className='absolute w-4 h-4   left-[450px]' />
-                        <a
-                            href="https://www.facebook.com/share/153am77Q8f/?mibextid=wwXIfr"
-
-                            className="px-12 py-2 transition-all rounded-full duration-600 bg-gradient-to-r from-primary to-secondary hover:text-white hover:bg-gray-400"
-                        >
-                            Inbox tư vấn book tour
-                        </a>
-                    </div>
-                    <p className='text-xs'>Bấm vào để hổ trợ tư vấn</p>
+                <div>
+                    <BlogSidebar item={item} />
                 </div>
             </div>
-        </div>
+            <BlogSchedule item={item} />
+            <BlogReview item={item} />
+            <BlogFeedback item={item} />
+            <BlogAddComment />
+        </>
+
     );
 };
 

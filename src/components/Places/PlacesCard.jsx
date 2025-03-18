@@ -3,7 +3,7 @@ import { AiOutlineRight } from 'react-icons/ai';
 import { IoLocationOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import { MdFavorite } from "react-icons/md";
-import StarRating from '../Star/StarRing';
+import StarDisplay from '../Star/StarDisplay';
 
 const PlacesCard = ({ item, booking = true, size = "default", left = false, star = false }) => {
     const sizeClasses = size === "small" ? "w-[300px]" : size === "large" ? "w-full" : "";
@@ -17,7 +17,7 @@ const PlacesCard = ({ item, booking = true, size = "default", left = false, star
                 </div>
                 {star && (
                     <div className='absolute flex items-center p-2 justify-center bg-white w-[100px] h-[25px] rounded-full bottom-3 left-[140px]'>
-                        <StarRating rating={item.star} />
+                        <StarDisplay rating={item.star} />
                     </div>
                 )}
             </div>

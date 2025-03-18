@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { CiClock2 } from "react-icons/ci";
-import { IoLocationOutline } from 'react-icons/io5';
 import { FaHiking } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import BlogContent from './BlogContent';
+import BlogHeader from './BlogHeader';
 
-const BlogDetailCard = ({ item }) => {
+const BlogImg = ({ item }) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [selectedImg, setSelectedImg] = useState(item.img[0]);
 
@@ -30,7 +30,7 @@ const BlogDetailCard = ({ item }) => {
     return (
         <div >
             <div className='container gap-10 '>
-                <div className=''>
+                <div className='pt-2'>
                     <div className="relative mx-auto">
                         <img
                             className=' h-[500px] w-full object-cover transition duration-700'
@@ -61,11 +61,11 @@ const BlogDetailCard = ({ item }) => {
                         ))}
                     </div>
                 </div>
-                
+                <BlogHeader item={item} />
             </div>
-            <BlogContent/>
+            <BlogContent />
         </div>
     );
 };
 
-export default BlogDetailCard;
+export default BlogImg;

@@ -22,8 +22,8 @@ const BlogContent = () => {
 
     return (
         <div>
-            <div className='container pt-10 border border-gray-500 rounded-[32px] mt-10'>
-                <h1 className='text-xl font-semibold text-blue-500'>Chương trình tour</h1>
+            <div className='container pt-10 mt-10'>
+                <h1 className='text-3xl font-semibold'>Khám phá Tours</h1>
                 {content && <BlogContentCard item={content} />}
             </div>
         </div>

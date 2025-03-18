@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-import BlogDetailCard from './BlogDetailCard';
 import axios from 'axios';
+import BlogImg from './BlogImg';
 
 const BlogDetail = () => {
     const { id } = useParams(); // Lấy id từ URL
@@ -22,7 +22,8 @@ const BlogDetail = () => {
 
     return (
         <div>
-x            {blogDetail && <BlogDetailCard item={blogDetail} />}
+            {blogDetail && <BlogImg item={blogDetail} />}
+
         </div>
     );
 };
