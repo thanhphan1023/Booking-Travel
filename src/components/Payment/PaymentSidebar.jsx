@@ -6,7 +6,7 @@ import Button from '../Button/Button';
 const PaymentSidebar = () => {
     return (
         <div className='pt-10'>
-            <div className='w-full h-[600px] p-10 rounded-lg shadow-xl bg-white'>
+            <div className='w-full h-[600px] border border-gray-200 p-10 rounded-lg shadow-xl bg-white'>
                 <div className='space-y-4'>
                     <div className='flex items-center gap-2'>
                         <BsTicketPerforated className='w-6 h-6 ' />
@@ -35,20 +35,22 @@ const PaymentSidebar = () => {
                         </div>
                     </div>
                     <hr className='border-gray-400 ' />
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center gap-5'>
                         <input
                             type="text"
                             placeholder='Mã giảm giá'
                             className='p-2 border border-gray-300 rounded-lg'
                         />
-                        <button>Áp dụng</button>
+                        <div>
+                            <button className='p-2 px-4 text-lg font-normal text-white bg-orange-500 rounded-lg'>Áp dụng</button>
+                        </div>
                     </div>
                     <hr className='border-gray-400 ' />
                     <div className='flex'>
                         <p className='text-xl font-semibold text-red-500 '>Tổng cộng:</p>
                     </div>
                     <div>
-                        <Button text='Xác nhận' width="max-w-[500px]" />
+                        <Button text='Xác nhận' width="max-w-[400px]" color="orange" rounded={false} />
                     </div>
                 </div>
             </div>
