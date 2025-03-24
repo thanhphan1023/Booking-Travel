@@ -10,8 +10,8 @@ const EvaluateCard = ({ item }) => {
                     className="block mx-auto rounded-full w-[100px]"
                 />
                 <h1 className="text-xl font-bold">{item.name}</h1>
-                      <p className="text-sm text-left text-gray-500">{item.content}</p>
-                      <p className="absolute top-0 right-0 font-serif text-black/20 text-9xl">
+                      <p className="text-sm text-left text-gray-500 dark:text-gray-400">{item.content}</p>
+                      <p className="absolute top-0 right-0 font-serif text-black/20 dark:text-white text-9xl">
                         ,,
                       </p>
             </div>

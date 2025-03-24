@@ -19,7 +19,7 @@ const ImgUs = [
 ]
 const ContactUs = () => {
     return (
-        <div className='pt-10 bg-gray-50'>
+        <div className='pt-10 bg-gray-50 dark:bg-[#101828] dark:text-white'>
             <div className='container flex items-center gap-10 mt-10 '>
                 <div data-aos="fade-left" className='w-1/3 mb-2 space-y-5'>
                     <h1 className='max-w-[360px] font-semibold text-3xl'>
@@ -32,7 +32,7 @@ const ContactUs = () => {
                     </p>
                     <div className='w-[300px] mx-auto p-3 text-center bg-white border border-gray-300 rounded-lg'>
                         <div className='space-y-3'>
-                            <p className='font-semibold'>85+ Thành viên nhóm chuyên gia</p>
+                            <p className='font-semibold dark:text-[#101828]'>85+ Thành viên nhóm chuyên gia</p>
                             <hr className='border-gray-400' />
                             <div className='flex p-4'>
                                 {ImgUs.map((img, index) => (
@@ -47,7 +47,7 @@ const ContactUs = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-col space-y-5'>
+                <div className='flex flex-col space-y-5 dark:text-[#101828]'>
                     <div data-aos="fade-up" >
                         {/* Email */}
                         <div className='flex items-center gap-10 '>

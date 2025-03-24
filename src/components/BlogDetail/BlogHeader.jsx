@@ -19,21 +19,21 @@ const BlogHeader = ({ item }) => {
             </div>
 
             {/* Bên phải */}
-            <div  data-aos="fade-right" className='flex items-center gap-6'>
+            <div  data-aos="fade-right" className='flex items-center gap-6 '>
                 {/* Nút Share Tour */}
-                <div className='flex items-center justify-center gap-2 bg-white w-[120px] border border-gray-300 shadow-md h-[40px] rounded-2xl'>
+                <div className='flex items-center justify-center gap-2 bg-white p-1 w-[120px] border border-gray-300 shadow-md h-[40px] rounded-2xl '>
                     <div className='flex items-center justify-center w-6 h-6 rounded-full bg-primary'>
                         <FaShareAlt className='w-4 h-4 text-white' />
                     </div>
-                    <span>Share Tour</span>
+                    <span className='dark:text-[#101828]'>Share Tour</span>
                 </div>
 
                 {/* Nút yêu thích */}
-                <div className='flex items-center gap-2 justify-center bg-white w-[120px] border border-gray-300 shadow-md h-[40px] rounded-2xl'>
+                <div className='flex items-center gap-2 p-1 justify-center bg-white w-[120px] border border-gray-300 shadow-md h-[40px] rounded-2xl'>
                     <div className='flex items-center justify-center w-6 h-6 bg-orange-500 rounded-full'>
                         <MdFavorite className='w-4 h-4 text-white' />
                     </div>
-                    <span>Tour list</span>
+                    <span className='dark:text-[#101828]'>Tour list</span>
                 </div>
             </div>
         </div>

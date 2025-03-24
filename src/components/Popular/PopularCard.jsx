@@ -4,7 +4,7 @@ import { CiClock2 } from "react-icons/ci";
 
 const PopularCard = ({ item }) => {
     return (
-        <Link className='mt-10 '>
+        <Link className='mt-10'>
             <div className='p-5 transition-all h-[400px] duration-500  cursor-pointer  rounded-[32px] hover:shadow-xl border border-gray-300'>
                 <div className='overflow-hidden'>
                     <img src={item.img[1]} alt={item.title[1]}

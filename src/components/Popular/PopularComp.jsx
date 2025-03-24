@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import BlogImg from '../../assets/Travel/dauphay.webp'
 import axios from 'axios';
-import { IoTelescope } from 'react-icons/io5';
 import PopularCard from './PopularCard';
 
 const PopularComp = () => {
@@ -18,7 +17,7 @@ const PopularComp = () => {
         getPopular()
     }, [])
     return (
-        <div className='py-10'>
+        <div className='pt-20 dark:bg-[#101828] dark:text-white'>
             <div data-aos="fade-up" className='container' >
                 <div className='mx-auto text-center '>
                     <h1 className='text-4xl font-bold '>Khám Phá Các Điểm Đến Phổ Biến</h1>

@@ -8,7 +8,7 @@ const AboutUs = () => {
         <div className='pt-14'>
             <div className='container' data-aos="fade-up">
                 <div className='flex items-center'>
-                    <p className='p-2 w-[150px] font-semibold bg-gray-200 text-center border border-orange-300 rounded-full flex-shrink-0'>
+                    <p className='p-2 w-[150px] dark:text-[#101828] font-semibold bg-gray-200 text-center border border-orange-300 rounded-full flex-shrink-0'>
                         Về chúng tôi
                     </p>
                     <div className='ml-[10%]'>
@@ -18,8 +18,8 @@ const AboutUs = () => {
                 <div className='flex justify-center mt-12 ml-[20%] gap-6'>
                     <div>
                         <div className="relative ml-[30%] flex items-center justify-center w-40 h-40 bg-white border border-gray-200 rounded-full shadow-lg">
-                            <div className="text-center ">
-                                <p className="text-lg font-medium">Chúng tôi có</p>
+                            <div className="text-center dark:text-[#101828]">
+                                <p className="text-lg font-medium ">Chúng tôi có</p>
                                 <p className="text-6xl font-bold">5+</p>
                             </div>
                             <div className="absolute transform rotate-12 -translate-y-1/4 top-1 right-2 translate-x-1/4">

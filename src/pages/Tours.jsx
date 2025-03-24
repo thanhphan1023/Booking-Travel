@@ -8,7 +8,7 @@ const Tours = () => {
     return (
         <div className=''>
             <TourHeader />
-            <div className='flex gap-3 p-5'>
+            <div className='flex gap-3 p-5 dark:bg-[#101828] dark:text-white'>
                 <div className='w-1/4'>
                     <TourFilter />
                 </div>

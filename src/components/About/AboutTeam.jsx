@@ -18,7 +18,7 @@ const AboutTeam = () => {
                             />
                         </div>
                         <div  data-aos="fade-up" className='space-y-1 text-center absolute right-[70px] top-[190px] bg-white rounded-xl h-[100px]  w-[260px] border shadow-md '>
-                            <h1 className='mt-2 font-semibold'>Nguyễn Trà Giang</h1>
+                            <h1 className='mt-2 font-semibold dark:text-[#101828]'>Nguyễn Trà Giang</h1>
                             <p className='text-gray-400'>Founder</p>
                             <div className='flex justify-center space-x-3 text-center text-orange-500 cursor-pointer'>
                                 <FaFacebook className="text-2xl " />
@@ -37,7 +37,7 @@ const AboutTeam = () => {
                             />
                         </div>
                         <div data-aos="fade-up" className='space-y-1 text-center absolute right-[70px] top-[190px] bg-white rounded-xl h-[100px]  w-[260px] border shadow-md '>
-                            <h1 className='mt-2 font-semibold'>Phan Văn Thanh</h1>
+                            <h1 className='mt-2 font-semibold dark:text-[#101828]'>Phan Văn Thanh</h1>
                             <p className='text-gray-400'>Founder</p>
                             <div className='flex justify-center space-x-3 text-center text-orange-500 cursor-pointer'>
                                 <FaFacebook className="text-2xl " />
@@ -56,7 +56,7 @@ const AboutTeam = () => {
                             />
                         </div>
                         <div data-aos="fade-up" className='space-y-1 text-center absolute right-[70px] top-[190px] bg-white rounded-xl h-[100px]  w-[260px] border shadow-md '>
-                            <h1 className='mt-2 font-semibold'>Trần Kiều My</h1>
+                            <h1 className='mt-2 font-semibold dark:text-[#101828]'>Trần Kiều My</h1>
                             <p className='text-gray-400'>Tour guide</p>
                             <div className='flex justify-center space-x-3 text-center text-orange-500 cursor-pointer'>
                                 <FaFacebook className="text-2xl " />

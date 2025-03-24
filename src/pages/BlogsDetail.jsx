@@ -7,7 +7,7 @@ const BlogsDetail = () => {
     console.log(location, useLocation)
 
     return (
-        <div className='pt-20'>
+        <div className='pt-20 dark:bg-[#101828] dark:text-white'>
             <BlogDetail />
             <Places title="Những Tour tương tự" />
         </div>

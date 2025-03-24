@@ -4,9 +4,11 @@ import LogoImg from "../../assets/Travel/Logo.png";
 import { FaCaretDown, FaPhoneAlt } from "react-icons/fa";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
-import ResponsiveMenu, { } from "../Navbar/ResponsiveMenu";
+import ResponsiveMenu from "../Navbar/ResponsiveMenu";
+
 import "flowbite";
 import { FaUserAlt } from "react-icons/fa";
+import useDarkMode from "../../hooks/useDarkMode";
 
 
 const DropdownLinks = [
@@ -27,7 +29,7 @@ const UserLinks = [
     },
     {
         name: "Tour đã đặt",
-        link: "/booking"
+        link: "/tourbooking"
     },
     {
         name: "Đăng xuất",
@@ -35,23 +37,12 @@ const UserLinks = [
     }
 ]
 const Navbar = () => {
-    const [darkMode, setDarkMode] = useState(
-        localStorage.getItem("theme") === "dark"
-    );
+    const [isDarkMode, toggleDarkMode] = useDarkMode()
     const [showMenu, setShowMenu] = useState(false);
-    const toggleMenu = () => {
-        setShowMenu(!showMenu)
-    }
-    useEffect(() => {
-        if (darkMode) {
-            document.documentElement.classList.add("dark"); // Thêm class 'dark' vào <html>
-            localStorage.setItem("theme", "dark");
-        } else {
-            document.documentElement.classList.remove("dark"); // Gỡ class 'dark' khỏi <html>
-            localStorage.setItem("theme", "light");
-        }
-    }, [darkMode]);
 
+    const toggleMenu = () => {
+        setShowMenu(!showMenu);
+    };
     return (
         <>
             <div className="fixed top-0 right-0 w-full text-black bg-white shadow-md dark:bg-gray-900 dark:text-white z-[999999]">
@@ -140,10 +131,10 @@ const Navbar = () => {
                         <div className="flex items-center gap-6">
                             {/* Toggle Dark Mode */}
                             <button
-                                onClick={() => setDarkMode(!darkMode)}
+                                onClick={toggleDarkMode}
                                 className="p-2 bg-gray-200 rounded-full dark:bg-gray-700"
                             >
-                                {darkMode ? <FiSun className="w-5 h-5 text-yellow-500" /> : <FiMoon className="w-5 h-5" />}
+                                {isDarkMode ? <FiSun className="w-5 h-5 text-yellow-500" /> : <FiMoon className="w-5 h-5" />}
                             </button>
                             {/* ĐN && ĐK */}
 
@@ -156,7 +147,7 @@ const Navbar = () => {
                             </Link>
                             <div className="relative py-4 group">
                                 <div className="flex items-center cursor-pointer dropdown">
-                                    <FaUserAlt className="w-6 h-6"/>
+                                    <FaUserAlt className="w-6 h-6" />
                                     <span>
                                         <FaCaretDown className="transition-all duration-200 group-hover:rotate-180:" />
                                     </span>

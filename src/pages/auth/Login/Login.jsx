@@ -18,38 +18,38 @@ const Login = () => {
     return (
         <>
             <Navbar />
-            <div className='pt-[90px]'>
-            <section className='flex container items-center sm:flex-row flex-col sm:h-[500px] md:h-[700px] gap-10 w-full '>
+            <div className='pt-[90px] dark:bg-[#101828] dark:text-white '>
+            <section className='flex container  items-center sm:flex-row flex-col sm:h-[500px] md:h-[700px] gap-10 w-full '>
                 <div className='w-2/5'>
                     <img className='object-cover h-[430px]' src={LoginImg} alt="Login" />
                 </div>
-                <div className='w-1/2'>
-                    <div className='max-w-[900px] text-left'>
-                        <h1 className='text-2xl font-bold text-black '>Đăng nhập hoặc tạo tài khoản</h1>
+                <div className='w-1/2 '>
+                    <div className='max-w-[900px] text-left '>
+                        <h1 className='text-2xl font-bold text-black dark:text-white '>Đăng nhập hoặc tạo tài khoản</h1>
                         <p className='mt-2 text-gray-500 -text-lg max-w-[600px]'>Bạn có thể đăng nhập tài khoản của mình để sử dụng dịch vụ của chúng tôi.</p>
                     </div>
-                    <form className='items-center mt-3 '>
-                        <label className='flex flex-col mb-2 text-gray-500'>Email</label>
+                    <form className='items-center mt-3'>
+                        <label className='flex flex-col mb-2 text-gray-500 dark:text-white'>Email</label>
                         <input type="email" name="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className='p-3 w-full max-w-[500px] h-auto mx-auto border border-gray-400 rounded-lg'
+                            className='p-3 w-full dark:text-[#101828] max-w-[500px] h-auto mx-auto border border-gray-400 rounded-lg'
                             placeholder='Email của bạn...'
                         />
                         <div className='relative mt-3'>
-                            <label className='flex flex-col mb-2 text-gray-500 '>Mật Khẩu</label>
+                            <label className='flex flex-col mb-2 text-gray-500 dark:text-white '>Mật Khẩu</label>
                             <input type={isShowPassword ? "text" : "password"} name='password'
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                className='p-3 w-full max-w-[500px] h-auto mx-auto border border-gray-400 rounded-lg'
+                                className='p-3 w-full dark:text-[#101828] max-w-[500px] h-auto mx-auto border border-gray-400 rounded-lg'
                                 placeholder='Mật khẩu...'
                             />
                             {errors?.password && <div className='pt-2 ml-2 text-sm text-rose-500'>{errors.password}</div>}
                             <div className='absolute top-[48px] right-[80px] cursor-pointer'>
                                 {isShowPassword ? (
-                                    <PiEye className='w-6 h-6' onClick={() => setIsShowPassword(false)} />
+                                    <PiEye className='w-6 h-6 dark:text-[#101828]' onClick={() => setIsShowPassword(false)} />
                                 ) : (
-                                    <PiEyeSlash className='w-6 h-6' onClick={() => setIsShowPassword(true)} />
+                                    <PiEyeSlash className='w-6 h-6 dark:text-[#101828]' onClick={() => setIsShowPassword(true)} />
                                 )}
                             </div>
                         </div>
@@ -65,11 +65,11 @@ const Login = () => {
                         <hr className='-ml-10 border-gray-400' />
                     </div>
                     <div className='flex flex-col gap-5 '>
-                        <a href='#!' className=' flex items-center justify-center gap-2 p-3 border max-w-[500px] rounded-xl bg-white cursor-pointer font-medium active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out hover:transition-all'>
+                        <a href='#!' className=' flex items-center dark:text-[#101828] justify-center gap-2 p-3 border max-w-[500px] rounded-xl bg-white cursor-pointer font-medium active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out hover:transition-all'>
                             <FcGoogle className='w-8 h-8 ' />
                             Login with Google
                         </a>
-                        <a href='#!' className=' flex items-center justify-center gap-2 p-3 border max-w-[500px] rounded-xl bg-white cursor-pointer font-medium active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out hover:transition-all'>
+                        <a href='#!' className=' flex items-center dark:text-[#101828] justify-center gap-2 p-3 border max-w-[500px] rounded-xl bg-white cursor-pointer font-medium active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out hover:transition-all'>
                             <FaFacebookF className='w-8 h-8 text-blue-700' />
                             Login with Facebook
                         </a>

@@ -9,7 +9,7 @@ import Evaluate from '../components/Evaluate/Evaluate';
 import Popular from './Popular';
 const Home = () => {
     return (
-        < >
+        <>
             <div className="h-[700px] relative w-full">
                 <video
                     autoPlay

@@ -12,7 +12,7 @@ const BlogSchedule = ({ item }) => {
         <div className="pt-16">
             <div className="">
                 <h1 className="text-2xl font-semibold">Lịch Trình</h1>
-                <div className="w-3/4 mt-10 space-y-4">
+                <div className="w-3/4 mt-10 space-y-4 dark:text-[#101828]">
                     {item.schedule.map((dayItem) => (
                         <div key={dayItem.day} className="border border-gray-200 max-w-[820px] bg-white p-4 rounded-lg">
                             <div

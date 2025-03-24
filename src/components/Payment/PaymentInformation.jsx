@@ -6,11 +6,11 @@ const PaymentInformation = () => {
     const [sdt, setSdt] = useState('');
     const [address, setAddress] = useState('');
     return (
-        <div className='pt-10'>
+        <div className='pt-10 '>
             <div className=''>
                 <h1 className='text-2xl font-semibold'>Thông tin liên lạc</h1>
-                <div className='w-full h-[270px] mt-5 bg-gray-100 rounded-lg'>
-                    <form className='items-center p-5 mt-3 space-y-4'>
+                <div className='w-full h-[270px] mt-5 bg-gray-100 rounded-lg dark:bg-[#101828] dark:border dark:border-white dark:text-white'>
+                    <form className='items-center p-5 mt-3 space-y-4 '>
                         <div className='flex justify-between '>
                             {/* Họ và tên */}
                             <div className='mt-3'>

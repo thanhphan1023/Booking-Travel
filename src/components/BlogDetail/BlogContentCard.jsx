@@ -16,10 +16,10 @@ const BlogContentCard = ({ item }) => {
                 <div className='w-3/4'>
                     <h1 className='mt-2 text-xl font-semibold'>Điếm nhấn</h1>
                     <div className='items-center mt-2 space-y-2 text-lg'>
-                        <p className="text-gray-500"><span className='font-semibold text-black'>Tham quan:</span> {item.highlight.tham_quan}</p>
-                        <p className="text-gray-500"><span className='font-semibold text-black'>Lưu trú:</span> {item.highlight.luu_tru}</p>
-                        <p className="text-gray-500"><span className='font-semibold text-black'>Ăn uống:</span> {item.highlight.am_thuc}</p>
-                        <p className="text-gray-500"><span className='font-semibold text-black'>Hoạt động khác:</span> {item.highlight.hoat_dong_khac}</p>
+                        <p className="text-gray-500"><span className='font-semibold text-black dark:text-white'>Tham quan:</span> {item.highlight.tham_quan}</p>
+                        <p className="text-gray-500"><span className='font-semibold text-blac dark:text-white'>Lưu trú:</span> {item.highlight.luu_tru}</p>
+                        <p className="text-gray-500"><span className='font-semibold text-black dark:text-white'>Ăn uống:</span> {item.highlight.am_thuc}</p>
+                        <p className="text-gray-500"><span className='font-semibold text-black dark:text-white'>Hoạt động khác:</span> {item.highlight.hoat_dong_khac}</p>
                     </div>
                     <div className='flex gap-6 mt-10'>
                         {/* bên trái */}

@@ -6,9 +6,9 @@ const prices = ["1.000.000 - 3.000.000", "3.000.000 - 6.000.000", "6.000.000 - 8
 const times = ['3 ngày 2 đêm', '4 ngày 3 đêm', '5 ngày 4 đêm']
 const TourFilter = () => {
     return (
-        <div className='pt-10'>
+        <div className='pt-10 '>
             <div className=''>
-                <div className='w-full h-full p-6 bg-white border border-gray-300 rounded-lg shadow-md'>
+                <div className='w-full h-full p-6 bg-white border border-gray-300 rounded-lg shadow-md dark:bg-[#101828] dark:text-white'>
                     <div className='ml-[200px] text-white '>
                         <button className='px-6 py-1 border border-gray-100 rounded-lg bg-primary'>Xóa</button>
                     </div>

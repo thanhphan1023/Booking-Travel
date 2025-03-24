@@ -7,7 +7,7 @@ const BlogAddComment = () => {
         <div className='pt-20'>
             <h1 className='text-2xl font-semibold'>Thêm đánh giá</h1>
             <div className='mt-10'>
-                <div className='w-[820px] h-[500px] bg-gray-100 p-10 border shadow-lg rounded-2xl'>
+                <div className='w-[820px] h-[500px] bg-gray-100 p-10 border shadow-lg rounded-2xl dark:bg-[#101828] dark:text-white'>
                     <div className='flex items-center gap-5'>
                         <h1 className='text-2xl font-semibold'>Đánh giá</h1>
                         <StarRating onRatingChange={(rating) => console.log("Bạn đã chọn: ", rating)} />

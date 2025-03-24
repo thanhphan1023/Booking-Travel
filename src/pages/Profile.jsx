@@ -4,7 +4,7 @@ import ProfileUser from '../components/Profile/ProfileUser';
 
 const Profile = () => {
     return (
-        <div>
+        <div className='dark:bg-[#101828] dark:text-white'>
           <ProfileUser/>
         </div>
     );

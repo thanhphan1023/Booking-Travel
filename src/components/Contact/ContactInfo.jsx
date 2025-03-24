@@ -11,11 +11,11 @@ const ContactInfo = () => {
     const [sdt, setSdt] = useState('');
     const [description, setDescription] = useState('');
     return (
-        <div className='pt-20'>
+        <div className='pt-20 '>
             <div className='container'>
                 {/* bên trái */}
                 <div className='flex gap-10'>
-                    <div className='w-1/2 h-full px-6 py-2 shadow-md bg-gray-50 rounded-xl'>
+                    <div className='w-1/2 h-full px-6 py-2 shadow-md bg-gray-50 dark:bg-[#101828] dark:text-white dark:border dark:border-white rounded-xl'>
                         <div data-aos="fade-left">
                             <div className='space-y-2'>
                                 <h1 className='text-3xl font-semibold'>Liên Hệ</h1>

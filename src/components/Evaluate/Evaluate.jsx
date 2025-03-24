@@ -60,13 +60,13 @@ const Evaluate = () => {
     };
     return (
         <>
-            <div data-aos="fade-up" data-aos-duration="300" className='py-10'>
+            <div data-aos="fade-up" data-aos-duration="300" className='py-10 dark:bg-[#101828] dark:text-white'>
                 <div className='container'>
                     <div className='flex justify-between mt-10 '>
                         <h4 className='text-4xl font-bold text-left'>Đánh giá từ những
                             <br />
                             người đã trải nghiệm</h4>
-                        <p className='text-gray-600 max-w-[390px] text-lg text-left '>Khách hàng chia sẻ về những kỷ niệm tuyệt vời trên chuyến du lịch với chúng tôi.</p>
+                        <p className='text-gray-600 max-w-[390px] text-lg text-left dark:text-white '>Khách hàng chia sẻ về những kỷ niệm tuyệt vời trên chuyến du lịch với chúng tôi.</p>
                     </div>
                     <div>
                         <img className='w-[100px] h-auto mt-10' src={EvaluateImg} alt="" />

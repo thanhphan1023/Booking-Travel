@@ -6,7 +6,7 @@ import ContactLocation from '../components/Contact/ContactLocation';
 
 const Contact = () => {
     return (
-        <div >
+        <div className='dark:bg-[#101828] dark:text-white' >
             <ContactHeader />
             <ContactUs />
             <ContactInfo />

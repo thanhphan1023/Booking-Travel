@@ -22,66 +22,66 @@ const Signup = () => {
     return (
         <>
             <Navbar />
-            <div className='pt-[90px]'>
+            <div className='pt-[90px] dark:bg-[#101828] dark:text-white'>
                 <section className='flex container items-center sm:flex-row flex-col sm:h-[500px] md:h-[700px] gap-5 w-full'>
                     <div className='w-1/2'>
                         <img className='object-cover h-[450px]' src={LoginImg} alt="Login" />
                     </div>
                     <div className='w-1/2'>
                         <div className='max-w-[900px] text-left'>
-                            <h1 className='text-2xl font-bold text-black '>Đăng ký</h1>
+                            <h1 className='text-2xl font-bold text-black dark:text-white'>Đăng ký</h1>
                             <p className='mt-2 text-gray-500 -text-lg max-w-[550px]'>Bạn có thể đăng nhập tài khoản của mình để sử dụng dịch vụ của chúng tôi.</p>
                         </div>
                         <form className='items-center mt-3 '>
                             <div className='mt-3'>
-                                <label className='flex flex-col mb-2 text-gray-500'>Họ và tên</label>
+                                <label className='flex flex-col mb-2 text-gray-500 dark:text-white'>Họ và tên</label>
                                 <input type='name' name="text"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
-                                    className='p-3 w-full max-w-[500px] h-auto mx-auto border border-gray-400 rounded-lg'
+                                    className='p-3 w-full dark:text-[#101828] max-w-[500px] h-auto mx-auto border border-gray-400 rounded-lg'
                                     placeholder='Tên của bạn...'
                                 />
                             </div>
                             <div className='mt-3'>
-                                <label className='flex flex-col mb-2 text-gray-500'>Email</label>
+                                <label className='flex flex-col mb-2 text-gray-500 dark:text-white'>Email</label>
                                 <input type="email" name="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className='p-3 w-full max-w-[500px] h-auto mx-auto border border-gray-400 rounded-lg'
+                                    className='p-3 dark:text-[#101828] w-full max-w-[500px] h-auto mx-auto border border-gray-400 rounded-lg'
                                     placeholder='Email của bạn...'
                                 />
                             </div>
                             <div className='relative mt-3'>
-                                <label className='flex flex-col mb-2 text-gray-500 '>Mật Khẩu</label>
+                                <label className='flex flex-col mb-2 text-gray-500 dark:text-white '>Mật Khẩu</label>
                                 <input type={isShowPassword ? "text" : "password"} name='password'
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className='p-3 w-full max-w-[500px] h-auto mx-auto border border-gray-400 rounded-lg'
+                                    className='p-3 dark:text-[#101828] w-full max-w-[500px] h-auto mx-auto border border-gray-400 rounded-lg'
                                     placeholder='Mật khẩu...'
                                 />
                                 {errors?.password && <div className='pt-2 ml-2 text-sm text-rose-500'>{errors.password}</div>}
                                 <div className='absolute top-[48px] right-[80px] cursor-pointer'>
                                     {isShowPassword ? (
-                                        <PiEye className='w-6 h-6' onClick={() => setIsShowPassword(false)} />
+                                        <PiEye className='w-6 h-6 dark:text-[#101828]' onClick={() => setIsShowPassword(false)} />
                                     ) : (
-                                        <PiEyeSlash className='w-6 h-6' onClick={() => setIsShowPassword(true)} />
+                                        <PiEyeSlash className='w-6 h-6 dark:text-[#101828]' onClick={() => setIsShowPassword(true)} />
                                     )}
                                 </div>
                             </div>
                             <div className='relative mt-3'>
-                                <label className='flex flex-col mb-2 text-gray-500 '>Xác nhận mật khẩu</label>
+                                <label className='flex flex-col mb-2 text-gray-500 dark:text-white '>Xác nhận mật khẩu</label>
 
                                 <input value={passwordConfirm} type={isShowConfirmPassword === true ? "text" : "password"} name='confirmPassword'
-                                    className='p-3 w-full max-w-[500px] h-auto mx-auto border border-gray-400 rounded-lg'
+                                    className='p-3 dark:text-[#101828] w-full max-w-[500px] h-auto mx-auto border border-gray-400 rounded-lg'
                                     placeholder='Nhập lại mật khẩu...'
                                     onChange={(e) => setPasswordConfirm(e.target.value)}
                                 />
                                 {errors.passwordConfirm && <div className='pt-2 ml-2 text-sm text-rose-500'>{errors.passwordConfirm}</div>}
                                 <div className='absolute top-[48px] right-[80px] cursor-pointer'>
                                     {isShowConfirmPassword ? (
-                                        <PiEye className='w-6 h-6' onClick={() => setIsShowConfirmPassword(false)} />
+                                        <PiEye className='w-6 h-6 dark:text-[#101828]' onClick={() => setIsShowConfirmPassword(false)} />
                                     ) : (
-                                        <PiEyeSlash className='w-6 h-6' onClick={() => setIsShowConfirmPassword(true)} />
+                                        <PiEyeSlash className='w-6 h-6 dark:text-[#101828]' onClick={() => setIsShowConfirmPassword(true)} />
                                     )}
                                 </div>
 

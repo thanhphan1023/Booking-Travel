@@ -6,7 +6,7 @@ import Button from '../Button/Button';
 const PaymentSidebar = () => {
     return (
         <div className='pt-10'>
-            <div className='w-full h-[600px] border border-gray-200 p-10 rounded-lg shadow-xl bg-white'>
+            <div className='w-full h-[600px] dark:bg-[#101828] dark:text-white border border-gray-200 p-10 rounded-lg shadow-xl bg-white'>
                 <div className='space-y-4'>
                     <div className='flex items-center gap-2'>
                         <BsTicketPerforated className='w-6 h-6 ' />

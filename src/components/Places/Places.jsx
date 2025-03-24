@@ -27,7 +27,7 @@ const Places = ({
     }, []);
 
     return (
-        <div className='py-10 '>
+        <div className='py-10 dark:bg-[#101828] dark:text-white'>
             <section data-aos="fade-up " className={container ? 'container' : ''} >
                 {hideTitle && (
                     <h1 className='py-2 pl-3 my-8 text-3xl font-bold text-left border-l-8 border-primary/50'>

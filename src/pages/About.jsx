@@ -7,7 +7,7 @@ import AboutTeam from '../components/About/AboutTeam';
 
 const About = () => {
     return (
-        <div>
+        <div className='dark:bg-[#101828] dark:text-white'>
             <AboutHeader />
             <AboutUs />
             <AboutBannerImg />

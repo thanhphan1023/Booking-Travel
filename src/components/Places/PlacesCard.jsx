@@ -8,8 +8,8 @@ import StarDisplay from '../Star/StarDisplay';
 const PlacesCard = ({ item, booking = true, size = "default", left = false, star = false }) => {
     const sizeClasses = size === "small" ? "w-[300px]" : size === "large" ? "w-full" : "";
     return (
-        <div className={`p-5 transition-all duration-500  shadow-2xl cursor-pointer rounded-[32px] hover:shadow-xl border border-gray-300 h-full flex flex-col ${sizeClasses} ${left ? 'ml-[16px]' : ''}`}>          
-            <div className='relative overflow-hidden'>
+        <div className={`p-5 transition-all   duration-500  shadow-2xl cursor-pointer rounded-[32px] hover:shadow-xl border border-gray-300 h-full flex flex-col ${sizeClasses} ${left ? 'ml-[16px]' : ''}`}>          
+            <div className='relative overflow-hidden '>
                 <img src={item.img[0]} alt={item.title[0]}
                     className='mx-auto h-[220px] w-full rounded-[32px] object-cover transition duration-700 hover:skew-x-2 hover:scale-110' />
                 <div className='absolute flex items-center justify-center w-6 h-6 bg-white rounded-full right-[20px] top-[10px]'>
