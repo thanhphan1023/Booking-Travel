@@ -6,9 +6,10 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -17,36 +18,47 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Builder
 public class User extends UtilsEntity implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "userId")
+    private Long userId;
 
-    @Column(name = "fullname", length = 100)
-    private String fullName;
+    @Column(name = "userName", length = 50, nullable = false)
+    private String userName;
 
-    @Column(name = "phone_number", length = 10, nullable = false)
-    private String phoneNumber;
-
-    @Column(name = "address", length = 200)
-    private String address;
-
-    @Column(name = "password", length = 200)
+    @Column(name = "password", length = 255, nullable = false)
     private String password;
 
+    @Column(name = "email", length = 255, nullable = false)
+    private String email;
+
+    @Column(name = "phoneNumber", length = 15, nullable = false)
+    private String phoneNumber;
+
+    @Column(name = "address", length = 255, nullable = false)
+    private String address;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
+
     @Column(name = "is_active")
-    private boolean active;
+    private Boolean isActive = true;
 
     @Column(name = "date_of_birth")
-    @Temporal(TemporalType.DATE)
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
     @Column(name = "facebook_account_id")
-    private int facebookAccountId;
+    private Integer facebookAccountId = 0;
 
     @Column(name = "google_account_id")
-    private int googleAccountId;
+    private Integer googleAccountId = 0;
+
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
