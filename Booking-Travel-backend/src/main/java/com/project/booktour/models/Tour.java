@@ -11,7 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @Data
 @Builder
-public class Tour {
+public class Tour extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "tourId")

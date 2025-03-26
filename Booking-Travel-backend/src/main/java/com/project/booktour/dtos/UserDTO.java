@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -32,7 +33,7 @@ public class UserDTO {
     private String confirmPassword;
 
     @JsonProperty("date_of_birth")
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
     @JsonProperty("facebook_account_id")
     private Integer facebookAccountId;
@@ -42,7 +43,7 @@ public class UserDTO {
 
     @NotNull(message = "Role ID is required")
     @JsonProperty("role_id")
-    private Integer roleId;
+    private Long roleId;
 
     @JsonProperty("is_active")
     private Boolean isActive; // Để phản ánh trạng thái tài khoản

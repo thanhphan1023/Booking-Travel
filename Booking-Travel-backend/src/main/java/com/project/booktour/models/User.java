@@ -20,7 +20,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Builder
-public class User extends UtilsEntity implements UserDetails {
+public class User extends BaseEntity implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userId")
