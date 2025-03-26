@@ -11,41 +11,40 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "bookingId")
+    @Column(name = "booking_id")
     private Long bookingId;
 
     @ManyToOne
-    @JoinColumn(name = "userId", nullable = false)
+    @JoinColumn(name = "user_id")
     private User user;
 
-    @Column(name = "bookingDate", nullable = false)
+    @Column(name = "booking_date", nullable = false)
     private LocalDate bookingDate;
 
-    @Column(name = "numAdults", nullable = false)
+    @Column(name = "num_adults", nullable = false)
     private Integer numAdults;
 
-    @Column(name = "numChildren", nullable = false)
+    @Column(name = "num_children", nullable = false)
     private Integer numChildren;
 
-    @Column(name = "totalPrice", nullable = false)
+    @Column(name = "total_price", nullable = false)
     private Double totalPrice;
 
-    @Column(name = "bookingStatus", length = 255, nullable = false)
+    @Column(name = "booking_status", length = 255, nullable = false)
     private String bookingStatus;
 
-    @Column(name = "specialRequests", length = 255)
+    @Column(name = "special_requests", length = 255)
     private String specialRequests;
 
     @ManyToOne
-    @JoinColumn(name = "tourId", nullable = false)
+    @JoinColumn(name = "tour_id")
     private Tour tour;
 
     @ManyToOne
-    @JoinColumn(name = "promotionId")
+    @JoinColumn(name = "promotion_id")
     private Promotion promotion;
 }

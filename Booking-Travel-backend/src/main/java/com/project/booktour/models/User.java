@@ -18,15 +18,14 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
 public class User extends BaseEntity implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "userId")
+    @Column(name = "user_id")
     private Long userId;
 
-    @Column(name = "userName", length = 50, nullable = false)
+    @Column(name = "user_name", length = 50, nullable = false)
     private String userName;
 
     @Column(name = "password", length = 255, nullable = false)
@@ -35,7 +34,7 @@ public class User extends BaseEntity implements UserDetails {
     @Column(name = "email", length = 255, nullable = false)
     private String email;
 
-    @Column(name = "phoneNumber", length = 15, nullable = false)
+    @Column(name = "phone_number", length = 15, nullable = false)
     private String phoneNumber;
 
     @Column(name = "address", length = 255, nullable = false)
@@ -66,12 +65,32 @@ public class User extends BaseEntity implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-     authorities.add( new SimpleGrantedAuthority("ROLE_"+getRole().getName().toUpperCase()));
-//        authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        authorities.add(new SimpleGrantedAuthority("ROLE_" + getRole().getName().toUpperCase()));
         return authorities;
     }
+
     @Override
     public String getUsername() {
-        return phoneNumber;
+        return userName;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return isActive;
     }
 }

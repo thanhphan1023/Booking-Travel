@@ -9,12 +9,11 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
 public class Tour extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "tourId")
+    @Column(name = "tour_id")
     private Long tourId;
 
     @Column(name = "title", length = 255, nullable = false)
@@ -29,10 +28,10 @@ public class Tour extends BaseEntity {
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
 
-    @Column(name = "priceAdult", nullable = false)
+    @Column(name = "price_adult", nullable = false)
     private Double priceAdult;
 
-    @Column(name = "priceChild", nullable = false)
+    @Column(name = "price_child", nullable = false)
     private Double priceChild;
 
     @Column(name = "duration", length = 255, nullable = false)

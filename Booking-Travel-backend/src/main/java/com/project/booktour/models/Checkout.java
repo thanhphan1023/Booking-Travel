@@ -11,33 +11,32 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
 public class Checkout {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "checkoutId")
+    @Column(name = "checkout_id")
     private Long checkoutId;
 
     @ManyToOne
-    @JoinColumn(name = "bookingId", nullable = false)
+    @JoinColumn(name = "booking_id")
     private Booking booking;
 
-    @Column(name = "paymentMethod", length = 255, nullable = false)
+    @Column(name = "payment_method", length = 255, nullable = false)
     private String paymentMethod;
 
-    @Column(name = "paymentDetails", length = 255, nullable = false)
+    @Column(name = "payment_details", length = 255, nullable = false)
     private String paymentDetails;
 
-    @Column(name = "paymentDate", nullable = false)
-    private LocalDateTime paymentDate = LocalDateTime.now();
+    @Column(name = "payment_date", nullable = false)
+    private LocalDateTime paymentDate;
 
     @Column(name = "amount", nullable = false)
     private Double amount;
 
-    @Column(name = "paymentStatus", length = 255, nullable = false)
+    @Column(name = "payment_status", length = 255, nullable = false)
     private String paymentStatus;
 
-    @Column(name = "transactionId", length = 255, nullable = false)
+    @Column(name = "transaction_id", length = 255, nullable = false)
     private String transactionId;
 }

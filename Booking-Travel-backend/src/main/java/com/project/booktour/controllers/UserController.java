@@ -21,28 +21,29 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
     private final IUserService userService;
+
     @PostMapping("/register")
-    public ResponseEntity<?> createUser(@RequestBody @Valid UserDTO userDTO  , BindingResult result){
-      try{
-          if(result.hasErrors()){
-              List<String> errorMessages = result.getFieldErrors()
-                      .stream().map(FieldError::getDefaultMessage).toList();
-              return ResponseEntity.badRequest().body(errorMessages);
-          }
-          if(!userDTO.getPassword().equals(userDTO.getConfirmPassword())){
-              return ResponseEntity.badRequest().body("Password does not math");
-          }
-         User user =  userService.createUser(userDTO);
-         return ResponseEntity.ok(user);
-      }catch (Exception e)
-      {
-          return ResponseEntity.badRequest().body(e.getMessage());
-      }
-    }
-    @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody @Valid UserLoginDTO userLoginDTO ){
+    public ResponseEntity<?> createUser(@RequestBody @Valid UserDTO userDTO, BindingResult result) {
         try {
-            String token = userService.login(userLoginDTO.getUsername() , userLoginDTO.getPassword());
+            if (result.hasErrors()) {
+                List<String> errorMessages = result.getFieldErrors()
+                        .stream().map(FieldError::getDefaultMessage).toList();
+                return ResponseEntity.badRequest().body(errorMessages);
+            }
+            if (!userDTO.getPassword().equals(userDTO.getConfirmPassword())) {
+                return ResponseEntity.badRequest().body("Password does not math");
+            }
+            User user = userService.createUser(userDTO);
+            return ResponseEntity.ok("User registered successfully: " + user.getUsername());
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody @Valid UserLoginDTO userLoginDTO) {
+        try {
+            String token = userService.login(userLoginDTO.getUserName(), userLoginDTO.getPassword());
             return ResponseEntity.ok(token);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());

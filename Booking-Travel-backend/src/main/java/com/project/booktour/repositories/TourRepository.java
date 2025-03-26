@@ -9,5 +9,6 @@ import org.springframework.data.domain.Pageable;
 @Repository
 public interface TourRepository extends JpaRepository<Tour, Long> {
     boolean existsByTitle(String title);
+
     Page<Tour> findAll(Pageable pageable);
 }

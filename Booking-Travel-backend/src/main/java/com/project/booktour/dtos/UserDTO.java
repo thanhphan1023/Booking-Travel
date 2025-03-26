@@ -7,7 +7,6 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Data
 @Getter
@@ -17,23 +16,18 @@ import java.util.Date;
 @Builder
 public class UserDTO {
     @NotBlank(message = "Username is required")
+    @JsonProperty("user_name")
     private String userName;
 
     @NotBlank(message = "Email is required")
     @Email(message = "Invalid email format")
     private String email;
 
-    @NotBlank(message = "Phone number is required")
-    private String phoneNumber;
-
-    private String address;
-
-    @NotBlank(message = "Password can not be blank")
+    @NotBlank(message = "Password cannot be blank")
     private String password;
-    private String confirmPassword;
 
-    @JsonProperty("date_of_birth")
-    private LocalDate dateOfBirth;
+    @JsonProperty("confirm_password")
+    private String confirmPassword;
 
     @JsonProperty("facebook_account_id")
     private Integer facebookAccountId;
@@ -42,9 +36,17 @@ public class UserDTO {
     private Integer googleAccountId;
 
     @NotNull(message = "Role ID is required")
-    @JsonProperty("role_id")
+    @JsonProperty("roleId")
     private Long roleId;
 
+    // Các trường tùy chọn
+    private String phoneNumber;
+
+    private String address;
+
+    @JsonProperty("date_of_birth")
+    private LocalDate dateOfBirth;
+
     @JsonProperty("is_active")
-    private Boolean isActive; // Để phản ánh trạng thái tài khoản
+    private Boolean isActive;
 }

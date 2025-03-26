@@ -25,7 +25,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class JwtTokenFilter extends OncePerRequestFilter {
     @Value("${api.prefix}")
-    private  String apiPrefix;
+    private String apiPrefix;
+
     private final UserDetailsService userDetailsService;
     private final JwtTokenUtil jwtTokenUtil;
 
@@ -36,42 +37,42 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
         try {
             if (isBypassToken(request)) {
-                filterChain.doFilter(request, response); // enable bypass
+                filterChain.doFilter(request, response); // Cho phép bypass
                 return;
             }
             final String authHeader = request.getHeader("Authorization");
-            if(authHeader == null && !authHeader.startsWith("Bearer ")){
-                response.sendError(HttpServletResponse.SC_UNAUTHORIZED , "Unaurhorrized");
+            if (authHeader == null || !authHeader.startsWith("Bearer ")) { // Sửa điều kiện kiểm tra
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
+                return;
             }
             final String token = authHeader.substring(7);
-            final String phoneNumber =  jwtTokenUtil.extractPhoneNumber(token);
-            if(phoneNumber != null && SecurityContextHolder.getContext().getAuthentication() == null){
-                User userDetails = (User) userDetailsService.loadUserByUsername(phoneNumber);
-                if(jwtTokenUtil.validateToken(token , userDetails)){
+            final String userName = jwtTokenUtil.extractUserName(token); // Đổi từ extractPhoneNumber thành extractUserName
+            if (userName != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+                User userDetails = (User) userDetailsService.loadUserByUsername(userName);
+                if (jwtTokenUtil.validateToken(token, userDetails)) {
                     UsernamePasswordAuthenticationToken authenticationToken =
-                            new UsernamePasswordAuthenticationToken(userDetails , null , userDetails.getAuthorities());
+                            new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                     authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                     SecurityContextHolder.getContext().setAuthentication(authenticationToken);
                 }
             }
-            filterChain.doFilter(request , response);
-        }catch (Exception e){
-            response.sendError(HttpServletResponse.SC_UNAUTHORIZED , "Unaurhorrized");
+            filterChain.doFilter(request, response);
+        } catch (Exception e) {
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
         }
     }
 
-
-
     private boolean isBypassToken(@NonNull HttpServletRequest request) {
         final List<Pair<String, String>> bypassTokens = Arrays.asList(
-                Pair.of(apiPrefix + "/products", "GET"),
-                Pair.of(apiPrefix + "/categories", "GET"),
-                Pair.of(apiPrefix + "/users/register", "POST"),
-                Pair.of(apiPrefix + "/users/login", "POST")
+                Pair.of(apiPrefix + "/tours", "GET"), // Lấy danh sách tour
+                Pair.of(apiPrefix + "/users/register", "POST"), // Đăng ký user
+                Pair.of(apiPrefix + "/users/login", "POST") // Đăng nhập user
+                // Nếu cần thêm endpoint không yêu cầu token, thêm vào đây
         );
+        String requestPath = request.getServletPath();
+        String requestMethod = request.getMethod();
         for (Pair<String, String> bypassToken : bypassTokens) {
-            if (request.getServletPath().contains(bypassToken.getFirst()) &&
-                    request.getMethod().equals(bypassToken.getSecond())) {
+            if (requestPath.contains(bypassToken.getFirst()) && requestMethod.equals(bypassToken.getSecond())) {
                 return true;
             }
         }

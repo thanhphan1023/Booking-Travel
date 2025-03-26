@@ -45,11 +45,8 @@ public class UserService implements IUserService {
         // Convert from userDTO -> user
         User newUser = User.builder()
                 .userName(userDTO.getUserName())
-                .password(userDTO.getPassword())
                 .email(userDTO.getEmail())
-                .phoneNumber(userDTO.getPhoneNumber())
-                .address(userDTO.getAddress())
-                .dateOfBirth(userDTO.getDateOfBirth())
+                .password(userDTO.getPassword())
                 .facebookAccountId(userDTO.getFacebookAccountId() != null ? userDTO.getFacebookAccountId() : 0)
                 .googleAccountId(userDTO.getGoogleAccountId() != null ? userDTO.getGoogleAccountId() : 0)
                 .role(role)

@@ -21,27 +21,33 @@ import java.util.function.Function;
 @RequiredArgsConstructor
 public class JwtTokenUtil {
     @Value("${jwt.expiration}")
-    private Long expiration ;
-    @Value("${jwt.secretky}")
-    private String secretky;
+    private Long expiration;
+
+    @Value("${jwt.secretky}") // Sửa lỗi chính tả nếu cần trong application.properties thành "secretkey"
+    private String secretKey;
+
     public String generateToken(com.project.booktour.models.User user) throws InvalidParamException {
-        Map<String, Object> claim = new HashMap<>();
-        claim.put("phonenumber" , user.getPhoneNumber());
-        try{
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("userName", user.getUsername());
+        try {
             String token = Jwts.builder()
-                    .setClaims(claim)
-                    .setSubject(user.getPhoneNumber())
-                    .setExpiration(new Date(System.currentTimeMillis() +  expiration * 1000L))
-                    .signWith(getSignInKey() , SignatureAlgorithm.HS256).compact();
+                    .setClaims(claims)
+                    .setSubject(user.getUsername()) // Dùng userName làm subject
+                    .setIssuedAt(new Date(System.currentTimeMillis()))
+                    .setExpiration(new Date(System.currentTimeMillis() + expiration * 1000L))
+                    .signWith(getSignInKey(), SignatureAlgorithm.HS256)
+                    .compact();
             return token;
-        }catch (Exception e){
-            throw new InvalidParamException("Cannot crate jwt token , error " + e.getMessage());
+        } catch (Exception e) {
+            throw new InvalidParamException("Cannot create JWT token, error: " + e.getMessage());
         }
     }
-    private Key getSignInKey(){
-        byte[] bytes = Decoders.BASE64.decode(secretky);
+
+    private Key getSignInKey() {
+        byte[] bytes = Decoders.BASE64.decode(secretKey);
         return Keys.hmacShaKeyFor(bytes);
     }
+
     private Claims extractAllClaims(String token) {
         return Jwts.parserBuilder()
                 .setSigningKey(getSignInKey())
@@ -59,13 +65,13 @@ public class JwtTokenUtil {
         Date expirationDate = this.extractClaim(token, Claims::getExpiration);
         return expirationDate.before(new Date());
     }
-    public String extractPhoneNumber(String token){
-        return extractClaim(token , Claims :: getSubject);
-    }
-    public boolean validateToken(String token, UserDetails userDetails) {
-        String phoneNumber = extractPhoneNumber(token);
-        return (phoneNumber.equals(userDetails.getUsername()));
-        // && !isTokenExpired(token);
+
+    public String extractUserName(String token) {
+        return extractClaim(token, Claims::getSubject);
     }
 
+    public boolean validateToken(String token, UserDetails userDetails) {
+        String userName = extractUserName(token);
+        return (userName.equals(userDetails.getUsername()) && !isTokenExpired(token)); // Bật lại kiểm tra expiration
+    }
 }

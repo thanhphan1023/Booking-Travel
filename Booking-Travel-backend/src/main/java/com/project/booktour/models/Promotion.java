@@ -11,12 +11,11 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
 public class Promotion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "promotionId")
+    @Column(name = "promotion_id")
     private Long promotionId;
 
     @Column(name = "description", length = 255, nullable = false)
@@ -25,10 +24,10 @@ public class Promotion {
     @Column(name = "discount", nullable = false)
     private Double discount;
 
-    @Column(name = "startDate", nullable = false)
+    @Column(name = "start_date", nullable = false)
     private LocalDate startDate;
 
-    @Column(name = "endDate", nullable = false)
+    @Column(name = "end_date", nullable = false)
     private LocalDate endDate;
 
     @Column(name = "quantity", nullable = false)

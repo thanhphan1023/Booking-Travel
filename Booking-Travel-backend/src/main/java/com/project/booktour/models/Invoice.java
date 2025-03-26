@@ -11,22 +11,21 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
 public class Invoice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "invoiceId")
+    @Column(name = "invoice_id")
     private Long invoiceId;
 
     @ManyToOne
-    @JoinColumn(name = "bookingId", nullable = false)
+    @JoinColumn(name = "booking_id")
     private Booking booking;
 
     @Column(name = "amount", nullable = false)
     private Double amount;
 
-    @Column(name = "invoiceDate", nullable = false)
+    @Column(name = "invoice_date", nullable = false)
     private LocalDate invoiceDate;
 
     @Column(name = "details", length = 255)

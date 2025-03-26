@@ -11,21 +11,20 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
 public class History {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "historyId")
+    @Column(name = "history_id")
     private Long historyId;
 
     @ManyToOne
-    @JoinColumn(name = "userId", nullable = false)
+    @JoinColumn(name = "user_id")
     private User user;
 
-    @Column(name = "actionType", length = 255, nullable = false)
+    @Column(name = "action_type", length = 255, nullable = false)
     private String actionType;
 
-    @Column(name = "createdAt", nullable = false)
-    private LocalDateTime createdAt = LocalDateTime.now();
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt;
 }

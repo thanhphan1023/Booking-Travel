@@ -11,20 +11,19 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "reviewId")
+    @Column(name = "review_id")
     private Long reviewId;
 
     @ManyToOne
-    @JoinColumn(name = "tourId", nullable = false)
+    @JoinColumn(name = "tour_id")
     private Tour tour;
 
     @ManyToOne
-    @JoinColumn(name = "userId", nullable = false)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @Column(name = "rating", nullable = false)
@@ -33,6 +32,6 @@ public class Review {
     @Column(name = "comment", length = 255, nullable = false)
     private String comment;
 
-    @Column(name = "createDate", nullable = false)
-    private LocalDateTime createDate = LocalDateTime.now();
+    @Column(name = "create_date", nullable = false)
+    private LocalDateTime createDate;
 }

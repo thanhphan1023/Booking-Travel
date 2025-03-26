@@ -10,8 +10,12 @@ import java.util.List;
 @Service
 public interface IBookingService {
     Booking createBooking(BookingDTO bookingDTO) throws Exception;
+
     Booking getBooking(Long id);
+
     Booking updateBooking(Long id, BookingDTO bookingDTO) throws DataNotFoundException;
+
     void deleteBooking(Long id);
+
     List<Booking> findByUserId(Long userId);
 }

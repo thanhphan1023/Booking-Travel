@@ -11,10 +11,11 @@ import lombok.*;
 @NoArgsConstructor
 @Data
 @Builder
-public class Role{
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "role_id")
+    private Long roleId;
 
     @Column(name = "name", length = 20, nullable = false)
     private String name;
