@@ -1,13 +1,13 @@
 import React from 'react';
 import ContactUs from '../components/Contact/ContactUs';
 import ContactInfo from '../components/Contact/ContactInfo';
-import ContactHeader from '../components/Contact/ContactHeader';
 import ContactLocation from '../components/Contact/ContactLocation';
+import HeaderImg from '../components/HeaderImg/HeaderImg';
 
 const Contact = () => {
     return (
         <div className='dark:bg-[#101828] dark:text-white' >
-            <ContactHeader />
+            <HeaderImg title="Liên Hệ" currenPage="Liên hệ" />
             <ContactUs />
             <ContactInfo />
             <ContactLocation />

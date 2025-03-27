@@ -1,10 +1,10 @@
 import React from 'react';
-import BookingHeader from '../components/TourBooking/BookingHeader';
+import HeaderImg from '../components/HeaderImg/HeaderImg';
 
 const TourBooking = () => {
     return (
         <div>
-            <BookingHeader/>
+            <HeaderImg title="Tour Đã Đặt" currenPage="Tour đã đặt" />
         </div>
     );
 };

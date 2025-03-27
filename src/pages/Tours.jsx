@@ -1,13 +1,13 @@
 import React from 'react';
-import TourHeader from '../components/Tour/TourHeader';
 import TourFilter from '../components/Tour/TourFilter';
 import Places from '../components/Places/Places';
 import Sort from '../components/Sort/Sort';
+import HeaderImg from '../components/HeaderImg/HeaderImg';
 
 const Tours = () => {
     return (
         <div className=''>
-            <TourHeader />
+            <HeaderImg title="Tour" currenPage="Tour" />
             <div className='flex gap-3 p-5 dark:bg-[#101828] dark:text-white'>
                 <div className='w-1/4'>
                     <TourFilter />

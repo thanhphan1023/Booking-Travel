@@ -7,6 +7,9 @@ import 'react-toastify/dist/ReactToastify.css';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-    <ToastContainer autoClose={2000} ></ToastContainer>
+    <ToastContainer
+      autoClose={1500}
+      containerStyle={{ zIndex: 9999 }}>
+    </ToastContainer>
   </StrictMode>,
 )

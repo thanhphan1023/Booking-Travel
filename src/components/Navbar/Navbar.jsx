@@ -45,7 +45,7 @@ const Navbar = () => {
     };
     return (
         <>
-            <div className="fixed top-0 right-0 w-full text-black bg-white shadow-md dark:bg-gray-900 dark:text-white z-[999999]">
+            <div className="fixed top-0 right-0 w-full text-black bg-white shadow-md dark:bg-gray-900 dark:text-white z-[999]">
                 <div className="hidden text-white bg-gradient-to-r from-primary to-secondary sm:block">
                     <div className="container py-[2px] flex items-center justify-between">
                         <p className="text-lg font-normal">Giảm giá 20% cho lần đặt tiếp theo</p>
